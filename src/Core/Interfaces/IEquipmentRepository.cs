@@ -1,9 +1,5 @@
-﻿using Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Common;
+using Core.Entities;
 
 namespace Core.Interfaces
 {
@@ -50,13 +46,13 @@ namespace Core.Interfaces
         /// <param name="requestedPage">The page requested to be shown.</param>
         /// <param name="pageSize">The page size to be shown.</param>
         /// <returns>A paged list of equipment which is filtered, sorted and paginated.</returns>
-        //public Task<PagedList<Equipment>> GetFilteredAndSortedEquipment(
-        //    string? category,
-        //    string? searchString,
-        //    string sortBy,
-        //    SortOrder sortOrder,
-        //    int requestedPage,
-        //    int pageSize);
+        public Task<PagedList<Equipment>> GetFilteredAndSortedEquipment(
+            string? category,
+            string? searchString,
+            string sortBy,
+            SortOrder sortOrder,
+            int requestedPage,
+            int pageSize);
 
         /// <summary>
         /// Update the <see cref="Equipment"/>

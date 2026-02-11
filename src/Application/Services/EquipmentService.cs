@@ -3,6 +3,7 @@ using Application.DTO;
 using Application.Interfaces;
 using Application.Helpers;
 using Core.Interfaces;
+using Core.Common;
 
 namespace Application.Services
 {
@@ -24,6 +25,18 @@ namespace Application.Services
         public async Task<bool> DeleteEquipment(int id)
         {
             return await equipmentRepository.DeleteEquipment(id);
+        }
+
+        public async Task<PagedList<EquipmentResponse>> GetFilteredAndSortedEquipment(string? category, string? searchString, string sortBy, SortOrder sortOrder, int page, int pageSize)
+        {
+            var pagedEquipmentList = await equipmentRepository.GetFilteredAndSortedEquipment(category, searchString, sortBy, sortOrder, page, pageSize);
+
+            return new PagedList<EquipmentResponse>
+            {
+                List = pagedEquipmentList.List.Select(e => e.ToEquipmentResponse()),
+                TotalPages = pagedEquipmentList.TotalPages,
+                CurrentPage = pagedEquipmentList.CurrentPage,
+            };
         }
 
         public async Task<IEnumerable<EquipmentResponse>?> ReadAllEquipment()

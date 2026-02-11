@@ -4,7 +4,7 @@ using Application.Services;
 using Application.Interfaces;
 using Application.DTO;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-
+using Core.Common;
 
 namespace EquipmentManagement.Api.Controllers
 {
@@ -35,6 +35,20 @@ namespace EquipmentManagement.Api.Controllers
             var result = await this.equipmentService.ReadAllEquipment();
 
             return result != null ? Ok(result.ToList()) : BadRequest("Issue with list");
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<PagedList<EquipmentResponse>>> GetFilteredAndSortedEquipment(
+            string category,
+            string? searchString,
+            string sortBy = nameof(EquipmentResponse.Id),
+            SortOrder sortOrder = SortOrder.ASC,
+            int page = 1,
+            int pageSize = 10)
+        {
+            var result  = await this.equipmentService.GetFilteredAndSortedEquipment(category, searchString, sortBy, sortOrder, page, pageSize);
+
+            return result != null ? Ok(result) : NotFound();
         }
 
         [HttpPost]

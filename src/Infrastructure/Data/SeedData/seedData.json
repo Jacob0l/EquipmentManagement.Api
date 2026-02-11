@@ -1,0 +1,394 @@
+﻿[
+    {
+        "Category": "Electrical",
+        "Type": "Oscilloscope",
+        "Manufacturer": "Tektronix",
+        "Model": "TDS3054C",
+        "SN": "SN-2019-1001"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Oscilloscope",
+        "Manufacturer": "Tektronix",
+        "Model": "MSO5104",
+        "SN": "SN-2020-1002"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Oscilloscope",
+        "Manufacturer": "Keysight",
+        "Model": "DSOX3024T",
+        "SN": "SN-2021-1003"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Oscilloscope",
+        "Manufacturer": "Keysight",
+        "Model": "MSOX4154A",
+        "SN": "SN-2022-1004"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Multimeter",
+        "Manufacturer": "Fluke",
+        "Model": "87V",
+        "SN": "SN-2019-1005"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Multimeter",
+        "Manufacturer": "Fluke",
+        "Model": "117",
+        "SN": "SN-2020-1006"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Multimeter",
+        "Manufacturer": "Agilent",
+        "Model": "U1252B",
+        "SN": "SN-2021-1007"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Multimeter",
+        "Manufacturer": "Agilent",
+        "Model": "U1242C",
+        "SN": "SN-2022-1008"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Power Supply",
+        "Manufacturer": "Keysight",
+        "Model": "E3631A",
+        "SN": "SN-2019-1009"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Power Supply",
+        "Manufacturer": "Keysight",
+        "Model": "E3633A",
+        "SN": "SN-2020-1010"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Power Supply",
+        "Manufacturer": "Rigol",
+        "Model": "DP832",
+        "SN": "SN-2021-1011"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Power Supply",
+        "Manufacturer": "Rigol",
+        "Model": "DP711",
+        "SN": "SN-2022-1012"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "CNC Mill",
+        "Manufacturer": "Haas",
+        "Model": "VF-2",
+        "SN": "SN-2019-2001"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "CNC Mill",
+        "Manufacturer": "Haas",
+        "Model": "VF-4",
+        "SN": "SN-2020-2002"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "CNC Mill",
+        "Manufacturer": "Mazak",
+        "Model": "VCN-530C",
+        "SN": "SN-2021-2003"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "CNC Mill",
+        "Manufacturer": "Mazak",
+        "Model": "VTC-800",
+        "SN": "SN-2022-2004"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Lathe",
+        "Manufacturer": "Haas",
+        "Model": "ST-20",
+        "SN": "SN-2019-2005"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Lathe",
+        "Manufacturer": "Haas",
+        "Model": "ST-30",
+        "SN": "SN-2020-2006"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Lathe",
+        "Manufacturer": "Okuma",
+        "Model": "LB3000",
+        "SN": "SN-2021-2007"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Lathe",
+        "Manufacturer": "Okuma",
+        "Model": "LB4000",
+        "SN": "SN-2022-2008"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Grinder",
+        "Manufacturer": "Chevalier",
+        "Model": "FSG-2A618",
+        "SN": "SN-2019-2009"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Grinder",
+        "Manufacturer": "Chevalier",
+        "Model": "FSG-3A1224",
+        "SN": "SN-2020-2010"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Grinder",
+        "Manufacturer": "Mitsui",
+        "Model": "MSG-618M",
+        "SN": "SN-2021-2011"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Grinder",
+        "Manufacturer": "Mitsui",
+        "Model": "MSG-820M",
+        "SN": "SN-2022-2012"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Press",
+        "Manufacturer": "Enerpac",
+        "Model": "RC-106",
+        "SN": "SN-2019-3001"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Press",
+        "Manufacturer": "Enerpac",
+        "Model": "RC-256",
+        "SN": "SN-2020-3002"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Press",
+        "Manufacturer": "Phoenix",
+        "Model": "HM50",
+        "SN": "SN-2021-3003"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Press",
+        "Manufacturer": "Phoenix",
+        "Model": "HM100",
+        "SN": "SN-2022-3004"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Pump",
+        "Manufacturer": "Parker",
+        "Model": "PV092R1K1T1",
+        "SN": "SN-2019-3005"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Pump",
+        "Manufacturer": "Parker",
+        "Model": "PV140R1K1T1",
+        "SN": "SN-2020-3006"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Pump",
+        "Manufacturer": "Bosch Rexroth",
+        "Model": "A10VSO45",
+        "SN": "SN-2021-3007"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Pump",
+        "Manufacturer": "Bosch Rexroth",
+        "Model": "A10VSO71",
+        "SN": "SN-2022-3008"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Cylinder",
+        "Manufacturer": "Eaton",
+        "Model": "2H-160",
+        "SN": "SN-2019-3009"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Cylinder",
+        "Manufacturer": "Eaton",
+        "Model": "2H-250",
+        "SN": "SN-2020-3010"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Cylinder",
+        "Manufacturer": "Prince",
+        "Model": "SAE-3000",
+        "SN": "SN-2021-3011"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Cylinder",
+        "Manufacturer": "Prince",
+        "Model": "SAE-5000",
+        "SN": "SN-2022-3012"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Air Compressor",
+        "Manufacturer": "Atlas Copco",
+        "Model": "GA30",
+        "SN": "SN-2019-4001"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Air Compressor",
+        "Manufacturer": "Atlas Copco",
+        "Model": "GA45",
+        "SN": "SN-2020-4002"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Air Compressor",
+        "Manufacturer": "Ingersoll Rand",
+        "Model": "R55i",
+        "SN": "SN-2021-4003"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Air Compressor",
+        "Manufacturer": "Ingersoll Rand",
+        "Model": "R75i",
+        "SN": "SN-2022-4004"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Valve",
+        "Manufacturer": "Festo",
+        "Model": "VUVG-L10",
+        "SN": "SN-2019-4005"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Valve",
+        "Manufacturer": "Festo",
+        "Model": "VUVG-L14",
+        "SN": "SN-2020-4006"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Valve",
+        "Manufacturer": "SMC",
+        "Model": "SY5120",
+        "SN": "SN-2021-4007"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Valve",
+        "Manufacturer": "SMC",
+        "Model": "SY7120",
+        "SN": "SN-2022-4008"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Cylinder",
+        "Manufacturer": "Norgren",
+        "Model": "RM/920/M/80",
+        "SN": "SN-2019-4009"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Cylinder",
+        "Manufacturer": "Norgren",
+        "Model": "RM/920/M/100",
+        "SN": "SN-2020-4010"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Cylinder",
+        "Manufacturer": "Bimba",
+        "Model": "121-DP",
+        "SN": "SN-2021-4011"
+    },
+    {
+        "Category": "Pneumatic",
+        "Type": "Pneumatic Cylinder",
+        "Manufacturer": "Bimba",
+        "Model": "170-DP",
+        "SN": "SN-2022-4012"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Oscilloscope",
+        "Manufacturer": "Tektronix",
+        "Model": "TDS3054C",
+        "SN": "SN-2023-1013"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Multimeter",
+        "Manufacturer": "Fluke",
+        "Model": "87V",
+        "SN": "SN-2023-1014"
+    },
+    {
+        "Category": "Electrical",
+        "Type": "Power Supply",
+        "Manufacturer": "Keysight",
+        "Model": "E3631A",
+        "SN": "SN-2023-1015"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "CNC Mill",
+        "Manufacturer": "Haas",
+        "Model": "VF-2",
+        "SN": "SN-2023-2013"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Lathe",
+        "Manufacturer": "Haas",
+        "Model": "ST-20",
+        "SN": "SN-2023-2014"
+    },
+    {
+        "Category": "Mechanical",
+        "Type": "Grinder",
+        "Manufacturer": "Chevalier",
+        "Model": "FSG-2A618",
+        "SN": "SN-2023-2015"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Press",
+        "Manufacturer": "Enerpac",
+        "Model": "RC-106",
+        "SN": "SN-2023-3013"
+    },
+    {
+        "Category": "Hydraulic",
+        "Type": "Hydraulic Pump",
+        "Manufacturer": "Parker",
+        "Model": "PV092R1K1T1",
+        "SN": "SN-2023-3014"
+    }
+]

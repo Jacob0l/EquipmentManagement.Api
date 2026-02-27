@@ -1,5 +1,6 @@
 ﻿using Core.Common;
 using Application.DTO;
+using Application.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Application.Interfaces
         /// <param name="page">The requested page to view.</param>
         /// <param name="pageSize">The page size.</param>
         /// <returns>A paged list of filtered and sorted equipment or all equipment if no match found.</returns>
-        public Task<PagedList<EquipmentResponse>> GetFilteredAndSortedEquipment(string? category, string? searchString, string sortBy, SortOrder sortOrder, int page, int pageSize);
+        public Task<Result<PagedList<EquipmentResponse>>> GetFilteredAndSortedEquipment(string? category, string? searchString, string sortBy, SortOrder sortOrder, int page, int pageSize);
 
         /// <summary>
         /// Sorts supplied equipment list based on sort category selected and sort order (ASC, DESC)

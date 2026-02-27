@@ -39,6 +39,7 @@ namespace Infrastructure.Repositories
 
             if (!string.IsNullOrWhiteSpace(category) && !string.IsNullOrWhiteSpace(searchString))
             {
+                category = typeof(Equipment).GetProperties().FirstOrDefault(p => p.Name.Equals(category, StringComparison.OrdinalIgnoreCase)).Name;
                 query = this.ApplyFiltering(query, category, searchString);
             }
 
@@ -89,7 +90,7 @@ namespace Infrastructure.Repositories
             return entitesChanged == 0 ? null : equipmentToUpdate;
         }
 
-        private IQueryable<Equipment> ApplyFiltering(IQueryable<Equipment> query, string category, string searchString)
+        private IQueryable<Equipment> ApplyFiltering(IQueryable<Equipment> query, string? category, string searchString)
         {
             switch (category)
             {

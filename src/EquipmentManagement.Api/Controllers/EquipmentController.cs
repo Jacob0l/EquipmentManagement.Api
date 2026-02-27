@@ -39,7 +39,7 @@ namespace EquipmentManagement.Api.Controllers
 
         [HttpGet]
         public async Task<ActionResult<PagedList<EquipmentResponse>>> GetFilteredAndSortedEquipment(
-            string category,
+            string? category,
             string? searchString,
             string sortBy = nameof(EquipmentResponse.Id),
             SortOrder sortOrder = SortOrder.ASC,
@@ -48,7 +48,7 @@ namespace EquipmentManagement.Api.Controllers
         {
             var result  = await this.equipmentService.GetFilteredAndSortedEquipment(category, searchString, sortBy, sortOrder, page, pageSize);
 
-            return result != null ? Ok(result) : NotFound();
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result);
         }
 
         [HttpPost]

@@ -1,9 +1,10 @@
 ﻿
 using Application.DTO;
-using Application.Interfaces;
 using Application.Helpers;
-using Core.Interfaces;
+using Application.Interfaces;
 using Core.Common;
+using Core.Entities;
+using Core.Interfaces;
 
 namespace Application.Services
 {
@@ -27,16 +28,26 @@ namespace Application.Services
             return await equipmentRepository.DeleteEquipment(id);
         }
 
-        public async Task<PagedList<EquipmentResponse>> GetFilteredAndSortedEquipment(string? category, string? searchString, string sortBy, SortOrder sortOrder, int page, int pageSize)
+        public async Task<Result<PagedList<EquipmentResponse>>> GetFilteredAndSortedEquipment(string? category, string? searchString, string sortBy, SortOrder sortOrder, int page, int pageSize)
         {
+            //Here we should check the category if it matches an equipement category and then get the category and pass it on and the same with the soryBy. The code is in repo right now.
+
+            var matchingProperty = typeof(Equipment).GetProperties().FirstOrDefault(p => p.Name.Equals(category, StringComparison.OrdinalIgnoreCase));
+
+            if (matchingProperty == null)
+                return Result<PagedList<EquipmentResponse>>.Failure($"The category {category} does not match any properties in {nameof(Equipment)}");
+                
+
             var pagedEquipmentList = await equipmentRepository.GetFilteredAndSortedEquipment(category, searchString, sortBy, sortOrder, page, pageSize);
 
-            return new PagedList<EquipmentResponse>
+            var result = new PagedList<EquipmentResponse>
             {
                 List = pagedEquipmentList.List.Select(e => e.ToEquipmentResponse()),
                 TotalPages = pagedEquipmentList.TotalPages,
                 CurrentPage = pagedEquipmentList.CurrentPage,
             };
+
+            return Result<PagedList<EquipmentResponse>>.Success(result);
         }
 
         public async Task<IEnumerable<EquipmentResponse>?> ReadAllEquipment()

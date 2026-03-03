@@ -41,5 +41,40 @@ namespace Application.Helpers
                 SN = equipment.SN,
             };
         }
+
+        public static Calibration ToCalibrationModel(this CreateCalibrationRequest createCalibration, Equipment equipment)
+        {
+            return new Calibration
+                (
+                    date: createCalibration.Date,
+                    companyName: createCalibration.CompanyName,
+                    price: createCalibration.Price,
+                    equipment: equipment
+                );
+        }
+
+        public static CreateCalibrationResponse ToCalibrationResponse(this Calibration calibration)
+        {
+            return new CreateCalibrationResponse()
+            {
+                Id = calibration.Id,
+                Date = calibration.Date,
+                CompanyName = calibration.CompanyName,
+                Price = calibration.Price,
+                EquipmentId = calibration.EquipmentId
+            };
+        }
+
+        public static CalibrationResponse ToCalibrationResponse(this Calibration calibration, EquipmentResponse equipment)
+        {
+            return new CalibrationResponse()
+            {
+                Id = calibration.Id,
+                Date = calibration.Date,
+                CompanyName = calibration.CompanyName,
+                Price = calibration.Price,
+                Equipment = equipment
+            };
+        }
     }
 }

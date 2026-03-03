@@ -12,7 +12,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <EmbeddedResource Include="Data/SeedData/seedData.json"></EmbeddedResource>
+        <EmbeddedResource Include="Data\SeedData\seedData.json"></EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>

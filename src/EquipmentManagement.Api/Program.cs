@@ -26,6 +26,9 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IEquipmentService, EquipmentService>();
 builder.Services.AddScoped<IEquipmentRepository, EquipmentRepository>();
 
+builder.Services.AddScoped<ICalibrationService, CalibrationService>();
+builder.Services.AddScoped<ICalibrationRepository, CalibrationRepository>();
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

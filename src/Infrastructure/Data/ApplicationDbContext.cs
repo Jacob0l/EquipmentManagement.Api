@@ -8,6 +8,7 @@ namespace Infrastructure.Data
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Equipment> Equipment { get; set; }
+        public DbSet<Calibration> Calibrations { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

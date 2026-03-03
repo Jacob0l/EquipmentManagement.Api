@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
+    /// TODO: Make all privat set with a ctor that sets them and then will need to change that in the service layer and also need a private no params ctor for EF to call for materialization.
     public class Equipment
     {
         /// <summary>
@@ -37,5 +38,10 @@ namespace Core.Entities
         /// The SN of the Equipment.
         /// </summary
         public required string SN {  get; set; }
+
+        /// <summary>
+        /// List of Calibrations performed on this equipment.
+        /// </summary>
+        public ICollection<Calibration> Calibrations { get; set; } = new List<Calibration>();
     }
 }

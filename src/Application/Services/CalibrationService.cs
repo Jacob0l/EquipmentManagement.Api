@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Application.DTO;
 using Core.Entities;
+using Core.QueryEntities;
 using Core.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Application.Services
     public class CalibrationService : ICalibrationService
     {
 
-        private ICalibrationRepository  calibrationRepository;
+        private ICalibrationRepository calibrationRepository;
         private IEquipmentRepository equipmentRepository;
 
         public CalibrationService(ICalibrationRepository calibrationRepository, IEquipmentRepository equipmentRepository)
@@ -60,9 +61,44 @@ namespace Application.Services
                 return Result<CalibrationResponse>.Failure(ex.ToString());
             }
 
-            return calibration != null 
+            return calibration != null
                 ? Result<CalibrationResponse>.Success(calibration.ToCalibrationResponse(calibration.Equipment.ToEquipmentResponse()))
                 : Result<CalibrationResponse>.Failure($"No Calibration found with id {id}");
+        }
+
+        public async Task<Result<IEnumerable<CalibrationsByCategory>>> GetCalibrationsByEquipmentCategory(DateRange dateRange)
+        {
+            IReadOnlyList<CalibrationEquipmentCategory> calibrationEquipmentCategories;
+
+            try
+            {
+                calibrationEquipmentCategories = await this.calibrationRepository.GetCalibrationsByEquipmentCategory(dateRange.startDate, dateRange.endDate);
+            }
+            catch (Exception ex)
+            {
+                return Result<IEnumerable<CalibrationsByCategory>>.Failure(ex.ToString());
+            }
+
+            if (!calibrationEquipmentCategories.Any())
+                return Result<IEnumerable<CalibrationsByCategory>>.Failure($"No calibrations found between {dateRange.startDate} to {dateRange.endDate}");
+
+            var groupedCalibrationByCategory = calibrationEquipmentCategories
+                .GroupBy(c => c.EquipmentCategory)
+                .Select(catGroup => new CalibrationsByCategory()
+                {
+                    EquipmentCategory = catGroup.Key,
+                    TotalPaid = catGroup.Sum(cal => cal.CalibrationPrice),
+                    NumberOfCalibrations = catGroup.Count(),
+                    ListOfCalibrationsByCompany = catGroup.GroupBy(cal => cal.CompanyName)
+                                                          .Select(compGroup => new CalibrationsByCompany()
+                                                          {
+                                                              CompanyName = compGroup.Key,
+                                                              TotalPaid = compGroup.Sum(cal => cal.CalibrationPrice),
+                                                              NumberOfCalibrations = compGroup.Count(),
+                                                          }).ToList()
+                }).ToList();
+
+            return Result<IEnumerable<CalibrationsByCategory>>.Success(groupedCalibrationByCategory);
         }
     }
 }

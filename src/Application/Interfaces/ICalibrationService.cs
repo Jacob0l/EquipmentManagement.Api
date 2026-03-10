@@ -24,5 +24,12 @@ namespace Application.Interfaces
         /// <param name="id">unique identifier.</param>
         /// <returns>The <see cref="Calibration"/></returns>
         public Task<Result<CalibrationResponse>> GetCalibration(int id);
+
+        /// <summary>
+        /// Gets the calibrations sorted by category and includes company information.
+        /// </summary>
+        /// <param name="dateRange">The date range to check for calibrations.</param>
+        /// <returns>A dictionary with the category as the key and the <see cref="CalibrationsByCompany"/> as the value.</returns>
+        public Task<Result<IEnumerable<CalibrationsByCategory>>> GetCalibrationsByEquipmentCategory(DateRange dateRange); 
     }
 }

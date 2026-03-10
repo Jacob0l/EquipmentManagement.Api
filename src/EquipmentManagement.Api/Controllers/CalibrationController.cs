@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-using Application.DTO;
-
+﻿using Application.DTO;
 using Application.Interfaces;
+using Core.Entities;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EquipmentManagement.Api.Controllers
 {
@@ -27,6 +26,14 @@ namespace EquipmentManagement.Api.Controllers
             return calibration.IsSuccess ? Ok(calibration.Value) : BadRequest(calibration.ErrorMessage);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetCalibrationByCategory([FromQuery]DateRange dateRange)
+        {
+            var calibrationDictionary = await this.calibrationService.GetCalibrationsByEquipmentCategory(dateRange);
+
+            return calibrationDictionary.IsSuccess ? Ok(calibrationDictionary.Value) : BadRequest(calibrationDictionary.ErrorMessage);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateCalibration(CreateCalibrationRequest createCalibration)
         {
@@ -34,5 +41,7 @@ namespace EquipmentManagement.Api.Controllers
 
             return calibration.IsSuccess ? Ok(calibration.Value) : BadRequest(calibration.ErrorMessage);
         }
+
+
     }
 }

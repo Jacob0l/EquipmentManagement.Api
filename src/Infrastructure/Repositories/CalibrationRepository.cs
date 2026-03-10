@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
+using Core.QueryEntities;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,14 @@ namespace Infrastructure.Repositories
             this.dbContext.Calibrations.Add(calibration);
             await this.dbContext.SaveChangesAsync();
             return calibration;
+        }
+
+        public async Task<IReadOnlyList<CalibrationEquipmentCategory>> GetCalibrationsByEquipmentCategory(DateOnly startDate, DateOnly endDate)
+        {
+            return await this.dbContext.Calibrations
+                        .Where(c => c.Date >= startDate && c.Date <= endDate)
+                        .Select(c => new CalibrationEquipmentCategory( c.Equipment.Category, c.Price, c.CompanyName))
+                        .ToListAsync();
         }
 
         public async Task<Calibration?> ReadCalibration(int id)
